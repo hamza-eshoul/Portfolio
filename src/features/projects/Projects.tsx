@@ -1,8 +1,8 @@
 import { useInView } from "react-intersection-observer";
 import { useTranslation } from "react-i18next";
 import { RiFolderInfoLine } from "react-icons/ri";
-import Project from "../components/Project";
-import { ProjectData } from "../types";
+import Project from "./Project";
+import { ProjectData } from "@/types";
 
 const projects_list: ProjectData[] = [
   {

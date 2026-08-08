@@ -1,5 +1,5 @@
 import { useTranslation } from "react-i18next";
-import { SkillCategory, SkillsData } from "../types";
+import { SkillCategory, SkillsData } from "@/types";
 import SkillIcon from "./SkillIcon";
 
 interface SkillsSectionProps {

@@ -1,5 +1,5 @@
-import EmailLink from "./EmailLink";
-import SocialLinks from "./SocialLinks";
+import EmailLink from "@/components/EmailLink";
+import SocialLinks from "@/components/SocialLinks";
 
 interface RootlayoutProps {
   children: React.ReactNode;

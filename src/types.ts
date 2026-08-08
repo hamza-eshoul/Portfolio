@@ -18,6 +18,11 @@ export interface SkillSet {
 
 export type SkillsData = Record<SkillCategory, SkillSet>;
 
+export interface ProjectDescriptionData {
+  text: string;
+  highlight: string;
+}
+
 export interface ProjectData {
   isReverse: boolean;
   image: string;
@@ -25,8 +30,5 @@ export interface ProjectData {
   repoLink: string;
   previewLink: string;
   technologies: string[];
-  description: {
-    text: string;
-    highlight: string;
-  };
+  description: ProjectDescriptionData;
 }

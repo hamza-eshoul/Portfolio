@@ -2,35 +2,19 @@ import { useInView } from "react-intersection-observer";
 import { FiGithub } from "react-icons/fi";
 import { PiArrowSquareOut } from "react-icons/pi";
 import { useTranslation } from "react-i18next";
+import { ProjectDescriptionData } from "@/types";
 
-interface Description {
-  text: string;
-  highlight: string;
-}
+// components
+import ProjectDescription from "./ProjectDescription";
 
 interface WrappedProjectProps {
   image: string;
   title: string;
-  description: {
-    text: string;
-    highlight: string;
-  };
+  description: ProjectDescriptionData;
   technologies: string[];
   repoLink: string;
   previewLink: string;
 }
-
-const renderDescription = (description: Description) => {
-  const { t } = useTranslation();
-  const parts = description.text.split(description.highlight);
-  return (
-    <>
-      {t(parts[0])}
-      <span className="text-secondaryColor">{t(description.highlight)}</span>
-      {t(parts[1])}
-    </>
-  );
-};
 
 const WrappedProject = ({
   image,
@@ -61,14 +45,19 @@ const WrappedProject = ({
               {t("projects.featuredProject")}
             </h3>
             <a
-              href="#"
-              className="curor-pointer cursor-pointer text-[28px] font-semibold text-lightestTertiaryColor transition duration-300 ease-in-out hover:text-secondaryColor"
+              href={previewLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="relative z-10 cursor-pointer text-[28px] font-semibold text-lightestTertiaryColor transition duration-300 ease-in-out hover:text-secondaryColor"
             >
               {title}
             </a>
           </div>
           <p className="text-justify text-[18px] text-lightTertiaryColor">
-            {renderDescription(description)}
+            <ProjectDescription
+              text={description.text}
+              highlight={description.highlight}
+            />
           </p>
           <ul className="z-10 flex w-full flex-wrap gap-3 pb-3 pt-2 font-mono text-[13px] text-lightestTertiaryColor">
             {technologies.map((technology) => (

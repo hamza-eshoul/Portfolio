@@ -1,6 +1,6 @@
 import { useInView } from "react-intersection-observer";
 import { useTranslation } from "react-i18next";
-import NoteworthyProject from "../components/NoteworthyProject";
+import NoteworthyProject from "./NoteworthyProject";
 
 interface NoteworthyProject {
   title: string;

@@ -1,16 +1,17 @@
 import { I18nextProvider } from "react-i18next";
-import i18n from "./i18n";
-import RootLayout from "./components/RootLayout";
+import i18n from "@/i18n";
+import RootLayout from "@/components/RootLayout";
+
+import Navbar from "@/features/navigation/Navbar";
+import Footer from "@/components/Footer";
 
 // sections
-import Hero from "./sections/Hero";
-import AboutMe from "./sections/AboutMe";
-import Skills from "./sections/Skills";
-import Projects from "./sections/Projects";
-import NoteworthyProjects from "./sections/NoteworthyProjects";
-import Contact from "./sections/Contact";
-import Footer from "./sections/Footer";
-import Navbar from "./components/Navbar";
+import Hero from "@/features/hero/Hero";
+import AboutMe from "@/features/about/AboutMe";
+import Skills from "@/features/skills/Skills";
+import Projects from "@/features/projects/Projects";
+import NoteworthyProjects from "@/features/projects/NoteworthyProjects";
+import Contact from "@/features/contact/Contact";
 
 const App = () => {
   return (

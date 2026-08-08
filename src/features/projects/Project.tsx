@@ -1,7 +1,7 @@
 import { useInView } from "react-intersection-observer";
 
 // types
-import { ProjectData } from "../types";
+import { ProjectData } from "@/types";
 
 // components
 import ProjectImage from "./ProjectImage";

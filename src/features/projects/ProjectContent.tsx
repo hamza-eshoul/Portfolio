@@ -1,27 +1,14 @@
 import { useTranslation } from "react-i18next";
 import { FiGithub } from "react-icons/fi";
 import { PiArrowSquareOut } from "react-icons/pi";
+import { ProjectDescriptionData } from "@/types";
 
-interface Description {
-  text: string;
-  highlight: string;
-}
-
-const renderDescription = (description: Description) => {
-  const { t } = useTranslation();
-  const parts = t(description.text).split(t(description.highlight));
-  return (
-    <>
-      {parts[0]}
-      <span className="text-secondaryColor">{t(description.highlight)}</span>
-      {parts[1]}
-    </>
-  );
-};
+// components
+import ProjectDescription from "./ProjectDescription";
 
 interface ProjectContentProps {
   title: string;
-  description: Description;
+  description: ProjectDescriptionData;
   technologies: string[];
   repoLink: string;
   previewLink: string;
@@ -66,7 +53,12 @@ const ProjectContent = ({
           isReverse ? "" : "xl:pl-12"
         }`}
       >
-        <p className="fade-in-animation">{renderDescription(description)}</p>
+        <p className="fade-in-animation">
+          <ProjectDescription
+            text={description.text}
+            highlight={description.highlight}
+          />
+        </p>
       </div>
       <ul
         className={`z-10 flex w-full flex-wrap ${

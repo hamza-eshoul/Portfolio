@@ -30,10 +30,10 @@ import { GrMysql } from "react-icons/gr";
 import { BsGit } from "react-icons/bs";
 
 // types
-import { SkillCategory, SkillsData } from "../types";
+import { SkillCategory, SkillsData } from "@/types";
 
 // components
-import SkillsSection from "../components/SkillsSection";
+import SkillsSection from "./SkillsSection";
 
 const Skills = () => {
   const { t } = useTranslation();

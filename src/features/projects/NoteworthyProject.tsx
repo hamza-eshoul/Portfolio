@@ -27,26 +27,26 @@ const NoteworthyProject = ({ data }: NoteworthyProjectProps) => {
   // data
   const { title, repoLink, previewLink, technologies, description } = data;
 
+  const cardLink = previewLink ? previewLink : repoLink;
+
   return (
-    <a
-      target="_blank"
-      href={previewLink ? previewLink : repoLink}
+    <article
       ref={ref}
       className={`${
         inView ? "fade-appear-animation" : "opacity-0"
-      } group cursor-pointer rounded bg-lightPrimaryColor p-8 transition duration-200 ease-in-out hover:-translate-y-1.5`}
+      } group relative rounded bg-lightPrimaryColor p-8 transition duration-200 ease-in-out hover:-translate-y-1.5`}
     >
       <header className="flex items-center justify-between pb-[35px]">
         <AiOutlineFolder className="text-[45px] text-secondaryColor" />
-        <ul className="flex gap-3">
+        <ul className="relative z-20 flex gap-3">
           <li>
-            <a href={repoLink} target="_blank">
+            <a href={repoLink} target="_blank" rel="noopener noreferrer">
               <FiGithub className="noteworthy-project-links text-[20px]" />
             </a>
           </li>
           {previewLink && (
             <li>
-              <a href={previewLink} target="_blank">
+              <a href={previewLink} target="_blank" rel="noopener noreferrer">
                 <PiArrowSquareOut className="noteworthy-project-links" />
               </a>
             </li>
@@ -54,8 +54,15 @@ const NoteworthyProject = ({ data }: NoteworthyProjectProps) => {
         </ul>
       </header>
 
-      <h3 className="pb-2.5 text-[22px] font-semibold text-lightestTertiaryColor hover:text-secondaryColor group-hover:text-secondaryColor">
-        {title}
+      <h3 className="pb-2.5 text-[22px] font-semibold text-lightestTertiaryColor group-hover:text-secondaryColor">
+        <a
+          href={cardLink}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="before:absolute before:inset-0 before:z-10 before:content-['']"
+        >
+          {title}
+        </a>
       </h3>
 
       <p className="fade-in-animation text-[17px] text-lightTertiaryColor">
@@ -68,7 +75,7 @@ const NoteworthyProject = ({ data }: NoteworthyProjectProps) => {
             <li key={technology}> {technology}</li>
           ))}
       </ul>
-    </a>
+    </article>
   );
 };
 
