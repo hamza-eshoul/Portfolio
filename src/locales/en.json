@@ -89,7 +89,7 @@
   "projects": {
     "title": "Projects",
     "info": {
-      "part1": "Projects that include ",
+      "part1": "Projects which include ",
       "highlight1": "Express.js APIs for the backend ",
       "part2": "(e.g., Odin Book, Messaging App ...) will need a few seconds to make their servers operational following an initial request. The APIs for these projects are hosted for free on the ",
       "part3": "platform, which ",
