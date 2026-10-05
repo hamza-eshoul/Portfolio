@@ -1,8 +1,8 @@
 import { useTranslation } from "react-i18next";
 
 const CV_URLS = {
-  en: "https://res.cloudinary.com/dfrd9rf2c/image/upload/v1728741033/personal_portfolio/Hamza-Eshoul-Front-End-Developer-Resume_dn5qjp.pdf",
-  fr: "https://res.cloudinary.com/dfrd9rf2c/image/upload/v1728739422/personal_portfolio/CV_Hamza_Eshoul_c412jb.pdf",
+  en: "/cv/Hamza-Eshoul-Full-Stack-Developer-Resume.pdf",
+  fr: "/cv/CV_Hamza_Eshoul.pdf",
 } as const;
 
 interface ResumeButtonProps {
